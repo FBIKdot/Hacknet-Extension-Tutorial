@@ -62,11 +62,11 @@ Actions中可以有多个Action，使用相对路径调用
 属性：  
 - Filepath 黑客脚本位置
 - DelayHost 用来给Action延迟，因Hacknet的特性，Action延迟需要一个节点帮助，这个节点就是DelayHost,需要有FastActionHost守护线程，该属性为节点ID
-- Delay 距离上一次执行后的延迟
+- Delay 距离上一次执行后的延迟，如果不需要延迟则不用指定DelayHost
 - SourceComp 源电脑，也就是执行操作后留下日志的电脑
 - TargetComp 目标电脑，黑客脚本作用的电脑
 - RequireLogsOnSource 可选属性，是否目标电脑在源电脑上留下日志的情况下才启动
-- RequireSourceIntact //TODO
+- RequireSourceIntact 可选属性，是否原电脑没有被清空系统文件的情况下才启动
 
 这是一个自闭合标签
 
@@ -74,7 +74,7 @@ Actions中可以有多个Action，使用相对路径调用
 作用:更改玩家的主题  
 属性:  
 - ThemePathOrName 主题的路径或者是名字
-- FlickerInDuration //TODO
+- FlickerInDuration 当切换主题时，界面闪烁的时间，单位为秒，设定为小于等于0则直接切换不闪烁
 
 这是一个自闭合标签
 
@@ -103,7 +103,7 @@ Actions中可以有多个Action，使用相对路径调用
 - CompleteAction 完全红屏后执行的Action
 - TotalDurationSeconds 完全红屏所用时间
 - DelayHost 中继节点，解释和上文相同
-- Delay 距离上一个执行后的延迟
+- Delay 距离上一个执行后的延迟，如果不需要延迟则不用指定DelayHost
 
 两个标签中的内容为红屏后左下角的提示，最多只能有三行
 
