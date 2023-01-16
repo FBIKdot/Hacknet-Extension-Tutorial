@@ -32,7 +32,7 @@ Actions中可以有多个Action，使用相对路径调用
     <!--这里是Action的其他代码-->
 </ConditionalActions>
 ```
-我们可以看到，Action由<ConditionalActions>开始，由</ConditionalActions>结束，这是Action的标准格式  
+我们可以看到，Action由```<ConditionalActions>```开始，由```</ConditionalActions>```结束，这是Action的标准格式  
 每个Action都有触发条件，也就是达成什么条件时触发  
 触发条件共有以下几种，但先决条件都是这个Action被加载:  
 - Instantly 立即触发 
