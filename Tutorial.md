@@ -47,13 +47,16 @@ Actions中可以有多个Action，使用相对路径调用
 - requiredFlags 拥有特定flag触发
 
 下面开始正式进行Action实现功能的讲解  
+首先，一些Action可以被延迟，如果需要延迟，则应指定两个属性：
+- DelayHost 因Hacknet的特性，Action延迟需要一个节点帮助，这个节点就是DelayHost,需要有FastActionHost守护线程，该属性为节点ID
+- Delay 延迟时间
 
 #### AddIRCMessage
 作用:在指定IRC频道发送消息  
 属性:
 - Author 信息的发送人
 - TargetComp 目标IRC频道节点ID
-- Delay 距离上一次执行后的延迟
+- Delay 距离该Actions被触发时的延迟
 
 两个标签中间是要发送的消息  
 
@@ -61,14 +64,12 @@ Actions中可以有多个Action，使用相对路径调用
 作用:启动黑客脚本  
 属性：
 - Filepath 黑客脚本位置
-- DelayHost 用来给Action延迟，因Hacknet的特性，Action延迟需要一个节点帮助，这个节点就是DelayHost,需要有FastActionHost守护线程，该属性为节点ID
-- Delay 距离上一次执行后的延迟，如果不需要延迟则不用指定DelayHost
 - SourceComp 源电脑，也就是执行操作后留下日志的电脑
 - TargetComp 目标电脑，黑客脚本作用的电脑
 - RequireLogsOnSource 可选属性，是否目标电脑在源电脑上留下日志的情况下才启动
 - RequireSourceIntact 可选属性，是否原电脑没有被清空系统文件的情况下才启动
 
-这是一个自闭合标签
+这是一个自闭合标签，可以被延迟  
 
 #### SwitchToTheme
 作用:更改玩家的主题  
@@ -93,8 +94,7 @@ Actions中可以有多个Action，使用相对路径调用
 - TargetComp 目标节点
 - TargetFolderpath 需要添加到的路径
 
-这是一个自闭合标签
-
+这是一个自闭合标签  
 
 #### StartScreenBleedEffect
 作用:开启红屏效果，也就是被追踪，要ISP改IP时的效果和最后删Entech文件的效果  
@@ -102,25 +102,19 @@ Actions中可以有多个Action，使用相对路径调用
 - AlertTitle 红屏标题
 - CompleteAction 完全红屏后执行的Action
 - TotalDurationSeconds 完全红屏所用时间
-- DelayHost 中继节点，解释和上文相同
-- Delay 距离上一个执行后的延迟，如果不需要延迟则不用指定DelayHost
 
-两个标签中的内容为红屏后左下角的提示，最多只能有三行
+两个标签中的内容为红屏后左下角的提示，最多只能有三行，可以被延迟  
 
 #### CancelScreenBleedEffect
-作用:关闭红屏效果
-属性:
-- DelayHost 和上文相同
-- Delay 和上文相同
+作用:关闭红屏效果  
+属性:无特殊属性  
 
-这是一个自闭合标签  
+这是一个自闭合标签，可以被延迟  
 
 #### KillExe
 作用:终止某个exe进程  
 属性:
-- DelayHost 解释和上文相同
-- Delay 解释和上文相同
-- ExeName 要结束的exe名字
+- ExeName 要结束的exe名字  
 
-这是一个自闭合标签  
+这是一个自闭合标签，可以被延迟  
 
