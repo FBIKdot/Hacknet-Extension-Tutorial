@@ -1,7 +1,7 @@
 # Hacknet-Extension-Tutorial-Content
 
 ## 前言  
-Hacknet目前有很多的扩展，其中优秀的也有很多，比如ZQG的OCA,Kwiper的Heartbeat；还有一些比较烂的，比如Death by Bit和Real World  
+Hacknet目前有很多的扩展，其中优秀的也有很多，也有一些比较烂的  
 但不管怎样，他们都尝试了编写自己的扩展，尝试为Hacknet社区出一份力  
 目前也有很多的人想要写扩展，可国内资料匮乏，国外缺少翻译，这是一大问题  
 为了解决这个问题，我们创建了这个仓库，用来尝试着完善教程，我们知道这会很难，但我们愿意尝试。
@@ -34,7 +34,7 @@ Actions中可以有多个Action，使用相对路径调用
 ```
 我们可以看到，Action由```<ConditionalActions>```开始，由```</ConditionalActions>```结束，这是Action的标准格式  
 每个Action都有触发条件，也就是达成什么条件时触发  
-触发条件共有以下几种，但先决条件都是这个Action被加载:  
+触发条件共有以下几种，但先决条件都是这个Action被加载:
 - Instantly 立即触发 
 - OnConnect 连接某个节点后触发，有一个必须属性target，指的是触发需要连接节点的ID
 - HasFlags 拥有某项flag(s)后触发，有一个必须属性requiredFlags,指的是触发需要的flag，多个flag用英文逗号分割
@@ -50,7 +50,7 @@ Actions中可以有多个Action，使用相对路径调用
 
 #### AddIRCMessage
 作用:在指定IRC频道发送消息  
-属性:  
+属性:
 - Author 信息的发送人
 - TargetComp 目标IRC频道节点ID
 - Delay 距离上一次执行后的延迟
@@ -59,7 +59,7 @@ Actions中可以有多个Action，使用相对路径调用
 
 #### LaunchHackScript
 作用:启动黑客脚本  
-属性：  
+属性：
 - Filepath 黑客脚本位置
 - DelayHost 用来给Action延迟，因Hacknet的特性，Action延迟需要一个节点帮助，这个节点就是DelayHost,需要有FastActionHost守护线程，该属性为节点ID
 - Delay 距离上一次执行后的延迟，如果不需要延迟则不用指定DelayHost
@@ -72,7 +72,7 @@ Actions中可以有多个Action，使用相对路径调用
 
 #### SwitchToTheme
 作用:更改玩家的主题  
-属性:  
+属性:
 - ThemePathOrName 主题的路径或者是名字
 - FlickerInDuration 当切换主题时，界面闪烁的时间，单位为秒，设定为小于等于0则直接切换不闪烁
 
@@ -80,14 +80,14 @@ Actions中可以有多个Action，使用相对路径调用
 
 #### AddConditionalActions
 作用:在Action中执行另一个Action  
-属性:  
+属性:
 - Filepath Action文件路径
 
 这是一个自闭合标签
 
 #### AddAsset
 作用:向指定节点添加文件  
-属性:  
+属性:
 - FileName 要添加的文件名字
 - FileContents 要添加的文件的内容
 - TargetComp 目标节点
@@ -98,7 +98,7 @@ Actions中可以有多个Action，使用相对路径调用
 
 #### StartScreenBleedEffect
 作用:开启红屏效果，也就是被追踪，要ISP改IP时的效果和最后删Entech文件的效果  
-属性:  
+属性:
 - AlertTitle 红屏标题
 - CompleteAction 完全红屏后执行的Action
 - TotalDurationSeconds 完全红屏所用时间
@@ -109,7 +109,7 @@ Actions中可以有多个Action，使用相对路径调用
 
 #### CancelScreenBleedEffect
 作用:关闭红屏效果
-属性:  
+属性:
 - DelayHost 和上文相同
 - Delay 和上文相同
 
@@ -117,7 +117,7 @@ Actions中可以有多个Action，使用相对路径调用
 
 #### KillExe
 作用:终止某个exe进程  
-属性:  
+属性:
 - DelayHost 解释和上文相同
 - Delay 解释和上文相同
 - ExeName 要结束的exe名字
