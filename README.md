@@ -4,11 +4,11 @@
 
 我们的目标是对官方的 Hacknet扩展教程 进行完善, 对网上残缺不齐的优秀教程进行整理. 
 
-[开始阅读](./Content/GetStart.md)
+[开始](./GetStart.md)
 
 # 参考内容
 
-- [*Hacknet Extensions Guide (Official)*](https://steamcommunity.com/sharedfiles/filedetails/?id=499723234)
+- [*Hacknet Extensions Guide (Official)*](https://steamcommunity.com/sharedfiles/filedetails/?id=914587661)
 
 - *IntroExtension*
 
