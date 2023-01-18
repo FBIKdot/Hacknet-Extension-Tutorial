@@ -12,7 +12,7 @@ Hacknet目前有很多的扩展，其中优秀的也有很多，也有一些比�
 - [Actions](./Actions.md) 实现游戏中的各种操作，各种对话，各种特效等  
 - Factions 多个Action的集合，可实现比如CSEC任务数据库中最后一个任务的锁定  
 - Docs 一些文本内容，如el论坛的帖子  
-- HackerScripts 黑客脚本，用来实现例如原版中naix的反击等  
+- [HackerScripts](./HackerScripts.md) 黑客脚本，用来实现例如原版中naix的反击等  
 - Missions 任务，在Hacknet中，每一个邮件都是一个任务  
 - Music 扩展的音乐资源
 - Nodes 扩展中存在的节点定义
