@@ -1,11 +1,17 @@
 # Hacknet-Extension-Tutorial
 
-## 介绍
-这是一个Hacknet扩展教程仓库，我们的目标是完善目前的Hacknet扩展教程，做到不漏掉任何一个Hacknet特性  
-目前的Hacknet扩展教程并不很完善，所以我们创建了这个项目，希望完成它  
-正式教程在本仓库下的Content文件夹下  
-## 作者 & 特别鸣谢
-目前此教程的作者都有:ZQG,Bit和FBIK  
-特别鸣谢:  
-感谢Error233为该教程的编写打下基础  
-感谢Hacknet的原版扩展教程  
+这是一个从零开始的 Hacknet扩展 制作教程. 
+
+我们的目标是对官方的 Hacknet扩展教程 进行完善, 对网上残缺不齐的优秀教程进行整理. 
+
+[开始](./GetStart.md)
+
+# 参考内容
+
+- [*Hacknet Extensions Guide (Official)*](https://steamcommunity.com/sharedfiles/filedetails/?id=914587661)
+
+- *IntroExtension*
+
+- *Hacknet 扩展制作指南 – 入门* by Pitiedwzr & Err0r233
+
+- *Hacknet 主机编辑指南* by Cyl18
