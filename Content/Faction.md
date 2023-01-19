@@ -22,11 +22,11 @@ Faction通过`Rank`(等级), 又称`Point`(积分)触发, 不同Faction的`Rank`
 Faction根标签`<CustomFaction>`的属性:
 
 - `name`: Faction的名字
-- `id`: Faction的id, 在设置Faction时起到作用
+- `id`: Faction的id, 在设置Faction时起到作用.
 - `playerVal`: 玩家在该Faction的初始`Rank`.
 
 # Faction的标签及其属性:
 
 Action标签`<Action>`: 
 - `ValueRequired`: 激活该Action所需的`Rank`值. 
-- 子标签: 可以为任何
+- 子标签: 可以为任何Action子标签(不可以是Action触发条件标签).
