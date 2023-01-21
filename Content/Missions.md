@@ -4,37 +4,28 @@
 ```xml
 <?xml version = "1.0" encoding = "UTF-8" ?>
 <mission id="testMission0" activeCheck="true" shouldIgnoreSenderVerification="false">
-  <goals>
-    <goal type="filedeletion" target="advExamplePC" file="asdf.txt" path="home"/>
-    
-  </goals>
-  
-  <missionStart val="7" suppress="true">changeSong</missionStart>
-
-  <missionEnd val="1">addRank</missionEnd>
-  
-  <nextMission IsSilent="false">NONE</nextMission>
-
-  <branchMissions>
-    <branch>Missions/BranchExample/TestBranchMission.xml</branch>
-  </branchMissions>
-  <posting title="Do the Extension Test Mission" reqs="someCustomFlag" requiredRank="3" >
+    <goals>
+        <goal type="filedeletion" target="advExamplePC" file="asdf.txt" path="home"/>
+    </goals>
+    <missionStart val="7" suppress="true">changeSong</missionStart>
+    <missionEnd val="1">addRank</missionEnd>
+    <nextMission IsSilent="false">NONE</nextMission>
+    <branchMissions>
+        <branch>Missions/BranchExample/TestBranchMission.xml</branch>
+    </branchMissions>
+    <posting title="Do the Extension Test Mission" reqs="someCustomFlag" requiredRank="3" >
 content
-  </posting>
-  
-  <email>
-    <sender>Matt</sender>
-    <subject>Test Mission Email</subject>
-    <body>body
-    </body>
-    <attachments>
-      <note title="An example note">note
-      </note>
-      <link comp="missionTestNode" />
-      <account comp="missionTestNode" user="TestUser" pass="testpass" />
-      
-    </attachments>
-  </email>
+    </posting>
+    <email>
+        <sender>Matt</sender>
+        <subject>Test Mission Email</subject>
+        <body>body</body>
+        <attachments>
+            <note title="An example note">note</note>
+            <link comp="missionTestNode" />
+        <account comp="missionTestNode" user="TestUser" pass="testpass" />
+        </attachments>
+    </email>
 </mission>
 ```  
 我们可以看到，Mission由`<mission>`开始，由`</mission>`结束  

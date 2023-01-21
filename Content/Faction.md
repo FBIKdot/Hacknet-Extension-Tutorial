@@ -29,4 +29,4 @@ Faction根标签`<CustomFaction>`的属性:
 
 Action标签`<Action>`: 
 - `ValueRequired`: 激活该Action所需的`Rank`值. 
-- 子标签: 可以为任何Action子标签(不可以是Action触发条件标签).
+- 子标签: 可以为任何Action的行动标签.
