@@ -1,0 +1,41 @@
+<ConditionalActions>
+    <Instantly>    
+        <!-- 加载类 -->
+        <AddConditionalActions Filepath="Actions/NextAction.xml" DelayHost="delayNode" Delay=""/>
+        <LaunchHackScript Filepath="Scripts/HackerScript.txt" DelayHost="delayNode" Delay="" SourceComp="enemyNode" TargetComp="playerComp" RequireLogsOnSource="false" RequireSourceIntact="true"/>
+        <LoadMission MissionName="Missions/SurpriseMission.xml"/>
+        <RunFunction FunctionName="" FunctionValue="0" DelayHost="delayNode" Delay="1.0"/>
+        <SaveGame DelayHost="delayNode" Delay=""/>
+
+        <!-- 文件操作类 -->
+        <AddAsset FileName="" FileContents="" TargetComp="playerComp" TargetFolderpath="home"/>
+        <AppendToFile DelayHost="delayNode" Delay="" TargetComp="companyWhitelist" TargetFolderpath="Whitelist" TargetFilename="list.txt">#PLAYER_IP#</AppendToFile>
+        <CopyAsset DestFilePath="home" DestComp="playerComp" SourceComp="assetNode" SourceFileName="copycat.txt" SourceFilePath="home/copy"/>
+        <DeleteFile TargetComp="playerComp" FilePath="home" FileName="deleteme.txt" DelayHost="delayNode" Delay=""/>
+        
+        <!-- 特殊内容操作类 -->
+        <AddIRCMessage Author="Kaguya" TargetComp="ircNode" Delay=""></AddIRCMessage>
+        <AddMissionToHubServer MissionFilepath="Missions/HubMission.xml" TargetComp="missionHub" AssignmentTag="Kaguya"/>
+        <AddThreadToMissionBoard ThreadFilepath="Docs/Thread.txt" TargetComp="elSec"/>
+        <RemoveMissionFromHubServer MissionFilepath="Missions/HubMission.xml" TargetComp="missionHub"/>
+        
+        <!-- 节点操作类 -->
+        <ChangeIP  DelayHost="delayNode" Delay="" TargetComp="finalNode" NewIP=""/>
+        <CrashComputer TargetComp="playerComp" CrashSource="enemyNode" DelayHost="delayNode" Delay=""/>
+        <GivePlayerUserAccount DelayHost="delayNode" Delay="" TargetComp="teamHub" Username="#PLAYERNAME#"/>
+        
+        <!-- HacknetOS操作类 -->
+        <CancelScreenBleedEffect DelayHost="delayNode" Delay=""/>
+        <ChangeAlertIcon Target="mainHub" Type="irchub" DelayHost="delayNode" Delay=""/>
+        <ChangeNetmapSortMethod DelayHost="delayNode" Delay="" Method="grid"/>
+        <HideAllNodes DelayHost="delayNode" Delay=""/>
+        <HideNode DelayHost="delayNode" Delay="" TargetComp="companySecurity"/>
+        <KillExe DelayHost="delayNode" Delay="" ExeName="*"/>
+        <SetLock DelayHost="delayNode" Delay="" Module="terminal" IsLocked="true" IsHidden="false"/>
+        <ShowNode DelayHost="delayNode" Delay="" Target="storageServer"/>
+        <StartScreenBleedEffect AlertTitle="Sequencer Attack" CompleteAction="Actions/ScreenBleedFailed.xml" TotalDurationSeconds="" DelayHost="delayNode" Delay="">Break into the Moonshine servers
+        Delete all files and backups
+        Get out of there!</StartScreenBleedEffect>
+        <SwitchToTheme ThemePathOrName="Themes/ExampleTheme.xml" FlickerInDuration="3.0" DelayHost="delayNode" Delay=""/>
+    </Instantly>
+</ConditionalActions>
