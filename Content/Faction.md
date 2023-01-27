@@ -4,7 +4,9 @@ Faction相当于一部分Action的包装, 与Action的区别在于**触发条件
 
 Faction只能通过`ExtensionInfo.xml`加载, 一个扩展可以加载多个Faction.
 
-Faction通过`Rank`(等级), 又称`Point`(积分)触发, 不同Faction的`Rank`是互相独立的.
+Faction通过`Rank`(排名), 又称`Point`(积分)触发, 不同Faction的`Rank`是互相独立的.
+
+玩家可以通过相对应的`<missionHubServer>`守护进程查看用户与其对应的`Rank`数.
 
 以下为Faction的大致结构:
 ~~~xml
