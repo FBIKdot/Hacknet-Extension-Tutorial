@@ -28,27 +28,27 @@ Action拥有触发条件功能. 触发条件通过**条件标签**来设置.
 ## 条件标签的通用非必须属性
 
 这些触发条件都有一些通用的可选属性:  
-- needsMissionComplete 当完成当前任务时触发
-- requiredFlags 拥有特定flag触发
+- `needsMissionComplete` 当完成当前任务时触发
+- `requiredFlags` 拥有特定flag触发
 
 ## 所有条件标签及其必须属性
 
-`<Instantly>` 立即触发:
+`<Instantly>`: 立即触发.
 - 无必须属性
 
-`<OnConnect>` 连接某个节点后触发:
+`<OnConnect>`: 连接某个节点后触发.
 - `target`: 需要连接的节点ID
 
-`<OnDisconnect>` 断开某个节点后触发.
+`<OnDisconnect>`: 断开某个节点后触发.
 - `target`: 需要断开的节点ID
 
-`<HasFlags>` 拥有某项flag(s)后触发.
+`<HasFlags>`: 拥有某项flag(s)后触发.
 - `requiredFlags`: 需要的flag, 多个flag用英文逗号隔开.
 
-`<DoesNotHaveFlags>`没有某项flag(s)后触发.
+`<DoesNotHaveFlags>`: 没有某项flag(s)后触发.
 - `requiredFlags`: 需要的flag, 多个flag用英文逗号隔开.
 
-`<OnAdminGained>` 获取某个节点的管理员权限后触发.
+`<OnAdminGained>`: 获取某个节点的管理员权限后触发.
 - `target`: 需要获取管理员权限的节点ID
 
 # 行为标签
@@ -57,105 +57,177 @@ Action拥有触发条件功能. 触发条件通过**条件标签**来设置.
 
 行为标签是条件标签的下一级标签.
 
-部分行为标签可以被延迟. 如果需要延迟, 则应指定两个属性:
+部分行为标签可以被延迟. 延迟情况特殊的行为标签我们将会进行提示, 可延迟的行为标签示范代码块中将带有相关属性. 所有行为标签的默认延迟时间均为0.
+不可延迟的行为标签只是其自身没有延迟功能, 可以通过其他方式进行延迟, 比如单独创建一个`Action`, 然后延迟加载该`Action`.
+
+如果需要延迟, 则应指定两个属性:
 - `DelayHost`: DelayHost的ID. 因Hacknet的特性, Action的延迟功能需要一个节点帮助, 这个节点就是DelayHost. DelayHost需要拥有`FastActionHost`守护线程.
 - `Delay`: 延迟时间, 单位为秒
+
 
 行为标签可以通过功能大致分为以下部分:
 - 加载类 行为标签
 - 文件操作类 行为标签
-- 特殊文件操作类 行为标签
+- 特殊内容操作类 行为标签
 - 节点操作类 行为标签
 - HacknetOS操作类 行为标签
 
 ## 加载类行为标签
 
-`<AddConditionalActions>`: 加载另一个Action.
 ~~~xml
 <AddConditionalActions Filepath="Actions/NextAction.xml" DelayHost="delayNode" Delay="0"/>
 ~~~
+`<AddConditionalActions>`: 加载另一个Action.
 - `Filepath`: Action文件相对路径.
 
-`<RunFunction>`: 运行Function.
-~~~xml
-<RunFunction FunctionName="FunctionName" FunctionValue="0" DelayHost="delayNode" Delay="0"/>
-~~~
-- `FunctionName`: Function的名字.
-- `FunctionValue`: Function运行时的参数值. 部分Function运行需要参数值.
-
-`<LaunchHackScript>`: 运行HackerScript.
 ~~~xml
 <LaunchHackScript Filepath="Scripts/HackerScript.txt" DelayHost="delayNode" Delay="0" SourceComp="SourceComp" TargetComp="TargetComp" RequireLogsOnSource="false" RequireSourceIntact="true"/>
 ~~~
+`<LaunchHackScript>`: 运行HackerScript.
 - `Filepath`: HackerScript的相对位置
 - `SourceComp`: 攻击源节点. HackerScript的攻击源节点需要设置为`[TARGET_COMP]`.
 - `TargetComp`: 目标节点. HackerScript的攻击源节点需要设置为`[SOURCE_COMP]`.
 - `RequireLogsOnSource`: 目标节点是否需要在攻击源节点上留下日志. 默认为false.
 - `RequireSourceIntact`: 攻击源节点是否需要系统网络文件
 
-## AddIRCMessage
-作用:在指定IRC频道发送消息  
-属性:
-- Author 信息的发送人
-- TargetComp 目标IRC频道节点ID
-- Delay 距离该Actions被触发时的延迟
+~~~xml
+<LoadMission MissionName="Missions/SurpriseMission.xml"/>
+~~~
+`<LoadMission>`立即加载任务:
+- `MissionName`: 任务的相对路径
 
-两个标签中间是要发送的消息  
+这是个自闭和标签, 不可被延迟.  
 
-## LaunchHackScript
-作用:启动黑客脚本  
-属性：
-- Filepath 黑客脚本位置
-- SourceComp 源电脑, 也就是执行操作后留下日志的电脑
-- TargetComp 目标电脑, 黑客脚本作用的电脑
-- RequireLogsOnSource 可选属性, 是否目标电脑在源电脑上留下日志的情况下才启动
-- RequireSourceIntact 可选属性, 是否原电脑没有被清空系统文件的情况下才启动
+~~~xml
+<RunFunction FunctionName="FunctionName" FunctionValue="0" DelayHost="delayNode" Delay="0"/>
+~~~
+`<RunFunction>`: 运行Function.
+- `FunctionName`: Function的名字.
+- `FunctionValue`: Function运行时传递参数值. 部分Function运行需要传递参数值.
+
+~~~xml
+<SaveGame DelayHost="delayNode" Delay="0"/>
+~~~
+`<SaveGame>`: 保存游戏  
 
 这是一个自闭合标签, 可以被延迟  
 
-## SwitchToTheme
-作用:更改玩家的主题  
+## 文件操作类
+~~~xml
+<AddAsset FileName="FileName" FileContents="text" TargetComp="playerComp" TargetFolderpath="home"/>
+~~~
+`AddAsset`: 向指定节点添加文件  
+- `FileName` 要添加的文件名字
+- `FileContents` 要添加的文件的内容
+- `TargetComp` 目标节点
+- `TargetFolderpath` 文件将会存放的路径
+
+这是一个自闭合标签, 不可延迟
+
+~~~xml
+<AppendToFile DelayHost="delayNode" Delay="0" TargetComp="companyWhitelist" TargetFolderpath="Whitelist" TargetFilename="list.txt">#PLAYER_IP#</AppendToFile>
+~~~
+`<AppendToFile>`: 附加内容到文件.
+- `TargetComp`: 目标节点.
+- `TargetFolderpath`: 目标文件所在目录.
+- `TargetFilename`: 目标文件名.
+- 内容: 添加到内容, 将会另起一行. 可以为空.
+
+
+~~~xml
+<CopyAsset DestFilePath="home" DestComp="playerComp" SourceComp="assetNode" SourceFileName="copycat.txt" SourceFilePath="home/copy"/>
+~~~
+`<CopyAsset>`: 文件复制
+- `SourceComp`: 源节点, 即拷贝目标的节点.
+- `SourceFileName`: 源文件, 即拷贝目标.
+- `DestFilePath`: 目标路径, 即粘贴的路径.
+- `DestComp`: 目标节点, 即粘贴的目标节点.
+
+这是一个自闭和标签, 不可延迟.
+
+~~~xml
+<DeleteFile TargetComp="playerComp" FilePath="home" FileName="deleteme.txt" DelayHost="delayNode" Delay="0"/>
+~~~
+`<DeleteFile>`: 删除文件
+- `TargetComp`: 目标节点
+- `FilePath`: 文件路径
+- `FileName`: 文件名
+
+## 特殊内容操作类
+~~~xml
+<AddIRCMessage Author="Kaguya" TargetComp="ircNode" Delay="">text</AddIRCMessage>
+~~~
+`AddIRCMessage`: 向IRC中添加消息.  
+- `Author` 信息的发送人
+- `TargetComp` 目标IRC频道节点ID
+- `Delay` 距离该Actions被触发时的延迟
+- 内容: 消息内容  
+
+IRC消息的延迟发送通过服务器的`runtime`目录实现, 无需`DelayHost`. 
+- IRC: /IRC/runtime
+- IRCHub(DHS): /HomeBase/runtime
+  
+~~~xml
+<SwitchToTheme ThemePathOrName="Themes/ExampleTheme.xml" FlickerInDuration="3.0" DelayHost="delayNode" Delay="0"/>
+~~~
+`SwitchToTheme`: 更改玩家的主题  
+- `ThemePathOrName` 主题的路径或者是名字
+- `FlickerInDuration` 当切换主题时, 界面闪烁的时间, 单位为秒, 设定为小于等于0则直接切换不闪烁
+
+这是一个自闭合标签, 可以被延迟 
+
+~~~xml
+<AddConditionalActions Filepath="Actions/NextAction.xml" DelayHost="delayNode" Delay=""/>
+~~~
+`AddConditionalActions`:在Action中执行另一个Action  
+- `Filepath` Action文件路径
+
+这是一个自闭合标签, 可以被延迟  
+
+~~~xml
+<StartScreenBleedEffect AlertTitle="Sequencer Attack" CompleteAction="Actions/ScreenBleedFailed.xml" TotalDurationSeconds="" DelayHost="delayNode" Delay="">Break into the Moonshine servers
+Delete all files and backups
+Get out of there!</StartScreenBleedEffect>
+~~~
+`StartScreenBleedEffect`:开启红屏效果, 也就是被追踪, 要ISP改IP时的效果和最后删Entech文件的效果  
 属性:
-- ThemePathOrName 主题的路径或者是名字
-- FlickerInDuration 当切换主题时, 界面闪烁的时间, 单位为秒, 设定为小于等于0则直接切换不闪烁
-
-这是一个自闭合标签
-
-## AddConditionalActions
-作用:在Action中执行另一个Action  
-属性:
-- Filepath Action文件路径
-
-这是一个自闭合标签
-
-## AddAsset
-作用:向指定节点添加文件  
-属性:
-- FileName 要添加的文件名字
-- FileContents 要添加的文件的内容
-- TargetComp 目标节点
-- TargetFolderpath 需要添加到的路径
-
-这是一个自闭合标签  
-
-## StartScreenBleedEffect
-作用:开启红屏效果, 也就是被追踪, 要ISP改IP时的效果和最后删Entech文件的效果  
-属性:
-- AlertTitle 红屏标题
-- CompleteAction 完全红屏后执行的Action
-- TotalDurationSeconds 完全红屏所用时间
+- `AlertTitle` 红屏标题
+- `CompleteAction` 完全红屏后执行的Action
+- `TotalDurationSeconds` 完全红屏所用时间
 
 两个标签中的内容为红屏后左下角的提示, 最多只能有三行, 可以被延迟  
 
-## CancelScreenBleedEffect
-作用:关闭红屏效果  
+~~~xml
+<CancelScreenBleedEffect DelayHost="delayNode" Delay="0"/>
+~~~
+`CancelScreenBleedEffect`:关闭红屏效果  
 属性:无特殊属性  
 
 这是一个自闭合标签, 可以被延迟  
 
-## KillExe
-作用:终止某个exe进程  
-属性:
-- ExeName 要结束的exe名字  
+~~~xml
+<KillExe DelayHost="delayNode" Delay="0" ExeName="*"/>
+~~~
+`KillExe`:终止某个exe进程  
+- `ExeName`: 要结束的exe名字  
 
 这是一个自闭合标签, 可以被延迟  
+
+~~~xml
+<LoadMission MissionName="Missions/SurpriseMission.xml"/>
+~~~
+`LoadMission`:加载一个任务  
+- `MissionName` 任务的相对路径  
+
+这是一个自闭合标签  
+
+~~~xml
+<RunFunction FunctionName="" FunctionValue="0" DelayHost="delayNode" Delay="1.0"/>
+~~~
+`RunFunction`: 加载一个function  
+- `FunctionName`: Function相对路径  
+- `FunctionValue`: //TODO不会
+
+这是一个自闭合标签,可以被延迟  
+
+~~~xml
