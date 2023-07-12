@@ -1,8 +1,35 @@
 # Function (函数)
 
-Function是一个特别的功能. 它更多在Mission里面使用, 虽然也可以被Action的行为标签使用. 
+Function可以更改游戏内容. 它可以在Mission和Action(包括Faction)中被执行. 
 
 在游戏中, 作者通过Function来简化他自己对游戏的控制, 与操作特殊功能. 其中只有部分Function是可以在扩展中使用的. 
+
+作者通过一个奇葩的方式来给Function传递参数, 这里通过`<missionStart>`和行为标签`<RunFunction>`对`setFaction`和`addRank`函数来做示范:
+
+函数的参数必须为字符串, 则这么执行函数:
+~~~xml
+<missionStart>setFaction:Entropy</missionStart>
+~~~
+~~~xml
+<RunFunction FunctionName="setFaction:Entropy"/>
+~~~
+假如函数的参数必须为整数, 则这么执行函数:
+~~~xml
+<missionStart val="1">addRank</missionStart>
+~~~
+~~~xml
+<RunFunction FunctionName="addRank" FunctionValue="1"/>
+~~~
+
+你可以通过这样来理解: 第一个示范写成`Javascript`是这样的
+~~~js
+setFaction.Entropy();
+~~~
+第二个是
+~~~js
+addRank(1);
+~~~
+
 
 # 可用Function大全
 
