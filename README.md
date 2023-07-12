@@ -2,9 +2,9 @@
 
 这是一个从零开始的 Hacknet扩展 制作教程. 
 
-我们的目标是对官方的 Hacknet扩展教程 进行完善, 对网上残缺不齐的优秀教程进行整理. 
+我们的目标是对官方的 `Hacknet Extensions Guide (Official)` 进行完善, 对网上残缺不齐的优秀教程进行整理. 
 
-这个扩展将持续维护, 如果发现任何不足, 欢迎创建`Issues`或者`Pull Request`.
+这个教程将持续维护, 如果你发现任何不足, 欢迎创建`Issues`或者`Pull Request`.
 
 # Get Start
 
