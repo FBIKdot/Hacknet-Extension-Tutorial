@@ -1,15 +1,18 @@
 # Extension
 
-扩展内容通过类型可以大致分为11个部分, 这些部分别是:  
-- [Actions](./Actions.md) (行为) 实现游戏中的各种操作, 各种对话, 各种特效等  
-- [Factions](./Faction.md) (阵营) 是特殊的Action, 可实现比如CSEC任务数据库中最后一个任务的锁定  
-- [HackerScripts](./HackerScripts.md) 黑客脚本, 用来描述黑客行为  
-- Missions (任务) 声明了玩家的"任务". 在Hacknet中, 每一个邮件都是一个"任务".  
-- Docs 特殊的"Mission". 一些文本内容, 如el论坛的帖子. 
-- Music (音乐) 音乐资源, 如BGM.
-- Nodes (节点) 用于声明扩展中存在的节点.
+扩展内容通过类型可以大致分为10个部分, 这些部分别是:  
+- [Actions](./Actions.md) (行为) 
+- [Factions](./Faction.md) (阵营)
+- [HackerScripts](./HackerScripts.md) 黑客脚本, 用于描述黑客行为 
+- Missions (任务)
+- Docs (文档) 一部分是特殊的"Mission". 一些文本内容, 如论坛帖子
+- Music (音乐) 音乐资源, 如BGM
+- Nodes (节点)  
 - People (人) 用于在通用医疗, 国际学术数据库和死亡人员数据库中添加人员数据
-- Themes (主题) 扩展自定义的Theme, 也就是x-server.sys
-- Web (网页) 用于Web服务器节点的html,css文件等  
+- Themes (主题) 
+- Web (网页)   
 
-虽然有11个类型, 但实际上, 只有Actions,Factions,Missions,HackerScripts和Nodes关系到游戏行为, 其余均为资源. 
+在编写扩展的过程中, 你还需要了解以下知识:
+- HacknetOS 游戏中的不同状态以及部分运行逻辑
+- Function (函数) 
+- 自替换占位符 在扩展的执行时会自行替换为相应特殊内容的字符
