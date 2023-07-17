@@ -1,8 +1,14 @@
 # Hacknet-Extension-Tutorial
 
+# ⚠注意! 该教程正在制作中, 内容没有完善, 你可以`Watch`后等待`Releases`. 制作进度请查看 [文档编写进度表 (Github Projects)](https://github.com/users/BovineBeta/projects/2)
+
 这是一个从零开始的 Hacknet扩展 制作教程. 
 
 我们的目标是对官方的 `Hacknet Extensions Guide (Official)` 进行完善, 对网上残缺不齐的优秀教程进行整理. 
+
+我们将在文档的修改后进行`Releases`, 如果你对这个项目有兴趣, 可以对该仓库开启`Watch`, 在`Custom`-勾选`Releases`或者勾选`All Activity`来开启`Releases`提醒.
+
+如果你觉得这个文档有意义, 可以`Stars`一下.
 
 这个教程将持续维护, 如果你发现任何不足, 欢迎创建[`Issues`](https://github.com/BovineBeta/Hacknet-Extension-Tutorial/issues)或者[`Pull Request`](https://github.com/BovineBeta/Hacknet-Extension-Tutorial/pulls).
 
