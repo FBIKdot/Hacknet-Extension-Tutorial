@@ -4,11 +4,13 @@
 
 我们的目标是对官方的 `Hacknet Extensions Guide (Official)` 进行完善, 对网上残缺不齐的优秀教程进行整理. 
 
-这个教程将持续维护, 如果你发现任何不足, 欢迎创建`Issues`或者`Pull Request`.
+这个教程将持续维护, 如果你发现任何不足, 欢迎创建[`Issues`](https://github.com/BovineBeta/Hacknet-Extension-Tutorial/issues)或者[`Pull Request`](https://github.com/BovineBeta/Hacknet-Extension-Tutorial/pulls).
+
+文档编写进度表: [Github Projects](https://github.com/users/BovineBeta/projects/2)
 
 # Get Start
 
-[开始](./GetStart.md)
+[开始阅读](./GetStart.md)
 
 # 参考内容
 
@@ -16,6 +18,6 @@
 
 - *IntroExtension*
 
-- *Hacknet 扩展制作指南 – 入门* by Pitiedwzr & Err0r233
+- *《Hacknet 扩展制作指南 – 入门》* by Pitiedwzr & Err0r233
 
-- *Hacknet 主机编辑指南* by Cyl18
+- *《Hacknet 主机编辑指南》* by Cyl18
