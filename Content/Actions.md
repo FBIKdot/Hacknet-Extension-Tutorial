@@ -1,7 +1,7 @@
 # Actions (行动)
 
 Actions可以根据特定条件控制游戏内容. 例如DHS中的对话, DLC中Coel的破坏白名单等, 它实现游戏的各种特效, 是一个优秀的扩展不可或缺的一部分.
-  
+
 为了更好的去介绍Action各个标签的功能, 我们在此将Action的标签分为3大类型:
 - 根标签
 - 条件标签
@@ -9,8 +9,18 @@ Actions可以根据特定条件控制游戏内容. 例如DHS中的对话, DLC中
 
 一个Action的结构大概如下:  
 ```xml
+<!-- 根标签 -->
 <ConditionalActions>
-    <!--这里是Action的其他代码-->
+
+    <!-- 条件标签 -->
+    <Instantly needsMissionComplete="false">
+
+        <!-- 行为标签 -->
+        <SaveGame DelayHost="delayNode" Delay="0"/>
+        ...
+    </Instantly>
+
+    ...
 </ConditionalActions>
 ```
 # 根标签
@@ -25,18 +35,13 @@ Action拥有触发条件功能. 触发条件通过**条件标签**来设置.
 
 条件标签必须是根标签的下一级标签.
 
-## 条件标签的通用非必须属性
 
-这些触发条件都有一些通用的可选属性:  
-- `needsMissionComplete` 当完成当前任务时触发
-- `requiredFlags` 拥有特定flag触发
-
-## 所有条件标签及其必须属性
+## 所有条件标签及其属性
 ~~~xml
 <Instantly needsMissionComplete="false"></Instantly>
 ~~~
 `<Instantly>`: 立即触发.
-- `needsMissionComplete`: 是否要在在任务完成后触发. 这是个非必须属性, 默认为`false`
+- *`needsMissionComplete`: 是否要在在任务完成后触发. 这是个非必须属性, 默认为`false`
 
 ~~~xml
 <OnConnect target="targetComp"></OnConnect>
@@ -80,14 +85,6 @@ Action拥有触发条件功能. 触发条件通过**条件标签**来设置.
 
 行为标签是条件标签的下一级标签.
 
-部分行为标签可以被延迟. 延迟情况特殊的行为标签我们将会进行提示, 可延迟的行为标签示范代码块中将带有相关属性. 所有行为标签的默认延迟时间均为0.
-不可延迟的行为标签只是其自身没有延迟功能, 可以通过其他方式进行延迟, 比如单独创建一个`Action`, 然后延迟加载该`Action`.
-
-如果需要延迟, 则应指定两个属性:
-- `DelayHost`: DelayHost的ID. 因Hacknet的特性, Action的延迟功能需要一个节点帮助, 这个节点就是DelayHost. DelayHost需要拥有`FastActionHost`守护线程.
-- `Delay`: 延迟时间, 单位为秒
-
-
 行为标签可以通过功能大致分为以下部分:
 - 加载类 行为标签
 - 文件操作类 行为标签
@@ -95,6 +92,15 @@ Action拥有触发条件功能. 触发条件通过**条件标签**来设置.
 - 节点操作类 行为标签
 - HacknetOS操作类 行为标签
 
+部分行为标签可以被延迟. `Action`的延迟通过DelayHost(延迟主机)实现, 此过程将会在DelayHost的`/runtime`生成缓存文件.
+
+如果行为标签可以延迟, 并且需要延迟, 则应指定两个属性. 下文将不在逐个说明. 属性如下:
+- `DelayHost`: DelayHost的ID. 因Hacknet的特性, Action的延迟功能需要一个节点帮助, 这个节点就是DelayHost. DelayHost需要拥有`FastActionHost`守护线程.
+- `Delay`: 延迟时间, 单位为秒
+
+可延迟行为标签的示范代码块中均包含`DelayHost`与`Delay`属性. 
+
+不可延迟的行为标签自身没有延迟功能, 但可以通过其他方式进行延迟, 比如使用`<AddConditionalActions>`.
 
 ***注意! 以下简称自闭和标签(空内容标签)为"空标签". 在所有可以延迟的行为标签中, 所有的`DelayHost`属性和`Delay`均为非必须属性.***
 ## 加载类行为标签
@@ -108,6 +114,8 @@ Action拥有触发条件功能. 触发条件通过**条件标签**来设置.
 | 空标签 | 可延迟 |
 | --- | --- |
 | 是 | 是 |
+
+可以通过`<AddConditionalActions>`使得部分不可延迟的行为标签延迟. 
 
 ~~~xml
 <LaunchHackScript Filepath="Scripts/HackerScript.txt" DelayHost="delayNode" Delay="0" SourceComp="SourceComp" TargetComp="TargetComp" RequireLogsOnSource="false" RequireSourceIntact="true"/>
@@ -131,7 +139,7 @@ Action拥有触发条件功能. 触发条件通过**条件标签**来设置.
 
 | 空标签 | 延迟 |
 | --- | --- |
-| 是 | 是 |
+| 是 | **否** |
 
 ~~~xml
 <RunFunction FunctionName="FunctionName" FunctionValue="0" DelayHost="delayNode" Delay="0"/>
@@ -216,7 +224,7 @@ Action拥有触发条件功能. 触发条件通过**条件标签**来设置.
 - `Delay` 距离该Actions被触发时的延迟
 - 内容: 消息内容  
 
-IRC消息的延迟发送通过服务器的`runtime`目录实现, 无需`DelayHost`. 
+IRC(DHS)消息的延迟发送通过目标服务器充当"`DelayHost`", 缓存内容将在`runtime`目录生成, 无需`DelayHost`. 
 - IRC: /IRC/runtime
 - IRCHub(DHS): /HomeBase/runtime
 
@@ -246,7 +254,7 @@ IRC消息的延迟发送通过服务器的`runtime`目录实现, 无需`DelayHos
 | 是 | 是 |
 
 ~~~xml
-<StartScreenBleedEffect AlertTitle="Sequencer Attack" CompleteAction="Actions/ScreenBleedFailed.xml" TotalDurationSeconds="" DelayHost="delayNode" Delay="">Break into the Moonshine servers
+<StartScreenBleedEffect AlertTitle="Sequencer Attack" CompleteAction="Actions/ScreenBleedFailed.xml" TotalDurationSeconds="100" DelayHost="delayNode" Delay="0">Break into the Moonshine servers
 Delete all files and backups
 Get out of there!</StartScreenBleedEffect>
 ~~~
@@ -256,6 +264,8 @@ Get out of there!</StartScreenBleedEffect>
 - `TotalDurationSeconds` 完全红屏所用时间
 
 两个标签中的内容为红屏后左下角的提示, 最多只能有三行.
+
+需要注意的是`AlertTitle`的英文字母小写与大写在游戏中对应的字体不同.
 
 | 空标签 | 可延迟 |
 | --- | --- |
@@ -280,26 +290,3 @@ Get out of there!</StartScreenBleedEffect>
 | 空标签 | 可延迟 |
 | --- | --- |
 | 是 | 是 |
-
-~~~xml
-<LoadMission MissionName="Missions/SurpriseMission.xml"/>
-~~~
-`LoadMission`:加载一个任务  
-- `MissionName` 任务的相对路径  
-
-| 空标签 | 可延迟 |
-| --- | --- |
-| 是 | **否** |
-
-~~~xml
-<RunFunction FunctionName="functionName" FunctionValue="0" DelayHost="delayNode" Delay="1.0"/>
-~~~
-`RunFunction`: 加载一个function  
-- `FunctionName`: Function相对路径  
-- `FunctionValue`: 运行function传递的参数值 (简答理解就类似于 `FunctionName(FunctionValue)`)
-
-| 空标签 | 可延迟 |
-| --- | --- |
-| 是 | 是 |
-
-~~~xml
