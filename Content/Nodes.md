@@ -310,4 +310,166 @@ PS:仍需要在目标邮件服务器中添加邮箱帐号
 用法与普通Node相同,省略
 
 ## Daemons
-//TODO
+Daemons(守护进程)为在Node上运行的各种程序  
+原版中的通用医疗和国际学术数据库等，本质上只是普通的Node,只是添加了Daemon来实现效果  
+
+### mailServer
+```xml
+<mailServer name="Example Mail Server" color="50,237,212" generateJunk="true">
+    <email recipient="mailGuy" sender="Sender Guy" subject="Adding an email!">
+This is how you add emails to the mail server - logging in with someone's account
+will show these just like the way the player gets emails.
+    </email>
+    <email recipient="mailGuy" sender="Spam" subject="amazing features">
+You can have as many of these as you want
+    </email>
+    <email recipient="Matt" sender="Spam" subject="amazing features">
+Different users too
+    </email>
+</mailServer>
+```
+邮件服务器  
+`name` : 显示的邮件服务器名  
+`color` : 邮件服务器主题色的rgb表示  
+`generateJunk` : 是否生成垃圾邮件  
+
+该Daemon可以定义的属性有:  
+#### email
+```xml
+<email recipient="Matt" sender="Spam" subject="amazing features">
+Different users too
+</email>
+```
+往邮件服务器中存储邮件  
+`recipient` : 接收者  
+`sender` : 发送者  
+`subject` : 标题  
+标签值为邮件内容
+
+### uploadServerDaemon
+```xml
+<uploadServerDaemon name="Upload Dropbox" folder="Drop" 
+                      needsAuth="false" color="204,116,212"/>
+```
+类似CSEC的上传服务器  
+`name` : 显示的上传服务器名  
+`folder` : 文件上传到的目录  
+`needsAuth` : 是否需要取得管理员权限才能上传文件  
+`color` : 上传服务器主题色的rgb表示
+
+### addWebServer
+```xml
+<addWebServer name="Website Server"
+                url="Web/ExampleWebsite/ExampleWebsite.html" />
+```
+类似Entech的网站服务器  
+`name` : 在网页界面现实的网站名  
+`url` : 显示的网页在扩展的相对路径  
+
+### deathRowDatabase
+```xml
+<deathRowDatabase />
+```
+死亡人员数据库  
+数据从扩展的People目录中读取  
+
+### academicDatabase
+```xml
+<academicDatabase />
+```
+国际学术数据库  
+数据从扩展的People目录中读取  
+
+### ispSystem
+```xml
+<ispSystem />
+```
+ISP数据库  
+
+### messageBoard
+```xml
+<messageBoard name="Custom Board Name!">
+    <thread>Docs/MessageBoardThreads/ExampleThread1.txt</thread>
+    <thread>Docs/MessageBoardThreads/ExampleThread2.txt</thread>
+  </messageBoard>
+```
+类似/el论坛的论坛  
+`name` : 显示的论坛名  
+
+该Daemon可用的属性有:  
+
+#### thread
+```xml
+<thread>Docs/MessageBoardThreads/ExampleThread2.txt</thread>
+```
+往该论坛中添加信息  
+标签值为要显示的数据在扩展的相对路径  
+关于显示数据的格式，请参阅Docs  
+
+###  MedicalDatabase
+```xml
+<MedicalDatabase />
+```
+通用医疗数据库  
+数据从扩展的People目录中读取  
+
+### HeartMonitor
+```xml
+<HeartMonitor patient="J_Stalvern"/>
+```
+心脏起搏器  
+`patient` : 佩戴者的名字,可通过指定flag`<Name>:DEAD`(不加尖括号)来使佩戴者死亡  
+
+### PointClicker
+```xml
+<PointClicker />
+```
+PointClicker
+
+### SongChangerDaemon
+```xml
+<SongChangerDaemon /> 
+```
+类似Hacknet原版最后`制作组与花絮`的换歌Daemon  
+
+### variableMissionListingServer
+```xml
+<variableMissionListingServer name="example listing server" iconPath="Logo.png" articleFolderPath="Docs/ListingServerArticles" color="120,200,2" assigner="false" public="false" title="This is the rendered title of the server"/>
+```
+类似Slashbot和Kellis帮助服务器的新闻服务器  
+`name` : 显示的新闻服务器名  
+`iconPath` : 显示的图标在扩展的相对路径  
+`articleFolderPath` : 存储新闻的目录在扩展的相对路径(PS:新闻以mission的格式存储)  
+`color` : 新闻服务器主题色的rgb表示  
+`assigner` : 是否将新闻当作任务处理(参考Entopy任务服务器)  
+`public` : 是否需要登录才能查看内容(参考Entopy任务服务器,false为需要,true为不需要)  
+`title` : 新闻服务器显示的标题
+
+### missionHubServer
+```xml
+<missionHubServer groupName="ExTech" serviceName="Example Tech Contract Hub" missionFolderPath="Missions/Misc" themeColor="200,10,10" lineColor="255,80,80" backgroundColor="20,20,20" allowAbandon="false"/>
+```
+类似CSEC的任务数据库  
+`groupName` : 任务组名  
+`serviceName` : 显示的数据库名  
+`missionFolderPath` : 任务目录在扩展的相对路径  
+`themeColor` : 数据库主题色的rgb表示  
+`lineColor` : 数据库下边冒出的一排线的颜色的rgb表示  
+`backgroundColor` : 数据库背景色的rgb表示  
+
+### CreditsDaemon
+```xml
+<CreditsDaemon Title="intro Extension Ending Credits" ButtonText="Complete" ConditionalActionSetToRunOnButtonPressPath="Actions/CreditsRunActions.xml"/>
+```
+鸣谢服务器，一般用于扩展结束后的Credit节点  
+`Title` : 显示的标题  
+`ButtonText` : 初次连接到服务器时显示的按钮文字(点了后才会显示鸣谢名单)  
+`ConditionalActionSetToRunOnButtonPressPath` : 在按了按钮后执行的Action在扩展的相对路径，若不需要可以不写该属性
+
+### FastActionHost
+```xml
+<FastActionHost />
+```
+FastActionHost支持  
+当为Node添加该Daemon后，该Node可以指定为可以延迟的Action的`DelayHost`  
+注:请尽量使用在扩展中不出现的节点作为DelayHost
