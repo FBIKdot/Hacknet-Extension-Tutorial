@@ -51,6 +51,9 @@ goal格式应为:`<goal type=[goal类型] [其余参数]/>`
 goal共有以下几个类型:  
 
 ### filedeletion
+```xml
+<goal type="filedeletion" target="advExamplePC" file="asdf.txt" path="home"/>
+```
 类型:删除文件  
 参数:
 - target 目标节点ID
@@ -58,12 +61,18 @@ goal共有以下几个类型:
 - path 文件所在目录
 
 ### clearfolder
+```xml
+<goal type="clearfolder" target="advExamplePC" path="home"/>
+```
 类型:清空文件夹  
 参数:
 - target 目标节点ID
 - path 要清空的目录路径
 
 ### filedownload
+```xml
+<goal type="filedownload" target="advExamplePC" file="downloadFile.txt" path="home"/>
+```
 类型:下载指定文件  
 参数:
 - target 目标节点ID
@@ -71,6 +80,9 @@ goal共有以下几个类型:
 - path 下载文件所在目录
 
 ### filechange
+```xml
+<goal type="filechange" target="advExamplePC" file="changeFile.txt" path="home" keyword="extension"/>
+```
 类型:更改文件内容  
 参数:
 - target 目标节点ID
@@ -91,26 +103,42 @@ goal共有以下几个类型:
 这个组合goal可以实现:让文件中的data替换为extension  
 
 ### getadmin
+```xml
+<goal type="getadmin" target="advExamplePC"/>
+```
 类型:获取指定电脑的管理员权限  
 参数:
 - target 目标节点ID
 
 ### getstring
+```xml
+<goal type="getstring" target="password" />
+```
 类型:在附加内容中存在指定内容  
 参数:
 - target 需要与附加内容匹配的字符串
 
 ### delay
+```xml
+<goal type="delay" time="10.0"/>
+```
 类型:仅延迟一段时间  
 参数:
 - time 延迟时间，单位秒
 
 ### hasflag
+```xml
+<goal type="hasflag" target="flagName"/>
+```
 类型:获取指定flag  
 参数:
 - target 目标flag
 
 ### fileupload
+```xml
+<goal type="fileupload" target="advExamplePC" file="asdf.txt" path="home" destTarget="introFactionHomeNode" destPath="Drop/Uploads"/>
+<goal type="fileupload" target="advExamplePC" file="asdf2.dec" path="home" destTarget="introFactionHomeNode" destPath="home" decrypt="true" decryptPass="password"/>
+```
 类型:上传文件  
 参数:
 - target 目标节点ID
@@ -122,6 +150,9 @@ goal共有以下几个类型:
 - decryptPass 指定decrypt为true后需要，解密密码，可选参数
 
 ### AddDegree
+```xml
+<goal type="AddDegree" owner="John Stalvern" degree="Masters in Digital Security" uni="Manchester University" gpa="3.0"/>
+```
 类型:在国际学术数据库中添加人员学历  
 参数:
 - owner 目标人名
@@ -130,11 +161,17 @@ goal共有以下几个类型:
 - gpa 绩点
 
 ### wipedegrees
+```xml
+<goal type="wipedegrees" owner="John Stalvern"/>
+```
 类型:在国际学术数据库中删除人员数据  
 参数:
 - owner 目标人名
 
 ### sendemail
+```xml
+<goal type="sendemail" mailServer="jmail" recipient="mailuser123" subject="Email Subject!"/>
+```
 类型:发送邮件  
 参数:
 - mailServer 邮件服务器节点ID
@@ -142,6 +179,9 @@ goal共有以下几个类型:
 - subject 标题
 
 ### removeDeathRowRecord
+```xml
+<goal type="removeDeathRowRecord" fname="Matt" lname="Trobbiani"/>
+```
 类型:删除人员死亡记录  
 参数:
 - fname 人员First Name(名)
@@ -151,6 +191,9 @@ goal共有以下几个类型:
 该goal可以是一个自闭合标签，也可以在开始和结束标签中添加遗言  
 
 ### getadminpasswordstring(DLC专属)
+```xml
+<goal type="getadminpasswordstring" target="advExamplePC"/>
+```
 类型:在附加内容中填写了指定节点的管理员密码  
 参数:
 - target 目标节点ID
