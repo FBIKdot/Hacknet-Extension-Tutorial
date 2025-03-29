@@ -1,6 +1,6 @@
 # Hacknet-Extension-Tutorial
 
-# ⚠注意! 该教程正在制作中, 内容没有完善, 你可以`Watch`后等待`Releases`. 制作进度请查看 [文档编写进度表 (Github Projects)](https://github.com/users/BovineBeta/projects/2)
+# ⚠已弃用。将会在与一个新的东西重新出现。
 
 这是一个从零开始的 Hacknet扩展 制作教程. 
 
