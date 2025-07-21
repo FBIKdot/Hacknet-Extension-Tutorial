@@ -1,6 +1,12 @@
-# Hacknet-Extension-Tutorial
+# ~Hacknet-Extension-Tutorial~
 
-# ⚠已弃用。将会在与一个新的东西重新出现。
+# ⚠已弃用。
+> [!WARNING]\
+> 此项目已弃用。这个教程混合了教程与规范。我打算将规范的工作交给一个标准，然后重新设计更引导式，更有互动的教程。
+> 
+> 标准：[hnxml](https://hnxml.js.org)（开发中）
+> 
+> 教程：敬请期待。
 
 这是一个从零开始的 Hacknet扩展 制作教程. 
 
