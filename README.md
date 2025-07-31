@@ -3,6 +3,8 @@
 # ⚠已弃用。
 > [!WARNING]\
 > 此项目已弃用。这个教程混合了教程与规范。我打算将规范的工作交给一个标准，然后重新设计更引导式，更有互动的教程。
+>
+> 如果你在阅读中发现内容有缺有误，是正常现象，欢迎创建 [issues](https://github.com/FBIKdot/Hacknet-Extension-Tutorial/issues)。
 > 
 > 标准：[hnxml](https://hnxml.js.org)（开发中）
 > 
