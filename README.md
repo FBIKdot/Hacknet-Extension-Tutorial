@@ -1,10 +1,10 @@
-# ~Hacknet-Extension-Tutorial~
+# Hacknet-Extension-Tutorial
 
-# ⚠已弃用。
+# ✅重新支持
 > [!WARNING]\
-> 此项目已弃用。这个教程混合了教程与规范。我打算将规范的工作交给一个标准，然后重新设计更引导式，更有互动的教程。
+> 此项目被弃用，但是由Vert重新支持。
 >
-> 如果你在阅读中发现内容有缺有误，是正常现象，欢迎创建 [issues](https://github.com/FBIKdot/Hacknet-Extension-Tutorial/issues)。
+> 项目已恢复支持。为确保您获得最佳体验，我们强烈建议您参阅下方的官方标准教程，以获取最准确、完整的操作指南。
 > 
 > 标准：[hnxml](https://hnxml.js.org)（开发中）
 > 
@@ -18,9 +18,9 @@
 
 如果你觉得这个文档有意义, 可以`Stars`一下.
 
-这个教程将持续维护, 如果你发现任何不足, 欢迎创建[`Issues`](https://github.com/BovineBeta/Hacknet-Extension-Tutorial/issues)或者[`Pull Request`](https://github.com/BovineBeta/Hacknet-Extension-Tutorial/pulls).
 
-文档编写进度表: [Github Projects](https://github.com/users/BovineBeta/projects/2)
+
+
 
 # Get Start
 
