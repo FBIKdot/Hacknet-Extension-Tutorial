@@ -1,6 +1,9 @@
 # Extension
 
-扩展内容通过类型可以大致分为10个部分, 这些部分别是:  
+
+
+扩展内容通过类型可以大致分为11个部分, 这些部分别是:  
+- [ExtensionInfo](./)
 - [Actions](./Actions.md) (行为) 
 - [Factions](./Faction.md) (阵营)
 - [HackerScripts](./HackerScripts.md) 黑客脚本, 用于描述黑客行为 
