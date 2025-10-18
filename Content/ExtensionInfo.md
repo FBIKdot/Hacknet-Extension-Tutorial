@@ -72,7 +72,7 @@ ExtensionInfo.xml是Hacknet扩展的核心配置文件，定义了扩展的基�
 - **StartingTheme**: 初始主题文件路径
 - **IntroStartupSong**: 启动音乐（原版游戏歌曲名或自定义.ogg文件路径）
 
-### 8. 扩展序列器设置
+### 8. 扩展序列器设置 （主线末尾的Sequencer.exe）
 ```xml
 <SequencerTargetID>advExamplePC</SequencerTargetID>
 <SequencerSpinUpTime>10.5</SequencerSpinUpTime>
@@ -81,8 +81,8 @@ ExtensionInfo.xml是Hacknet扩展的核心配置文件，定义了扩展的基�
 ```
 - **SequencerTargetID**: 序列器目标计算机ID
 - **SequencerSpinUpTime**: 序列器启动时间（秒）
-- **SequencerFlagRequiredForStart**: 启动序列器所需的标志
-- **ActionsToRunOnSequencerStart**: 序列器启动时运行的动作文件
+- **SequencerFlagRequiredForStart**: 启动序列器所需的Faction（派系，如：CSEC）等级
+- **ActionsToRunOnSequencerStart**: 序列器启动时运行的Action（动作）文件
 
 ### 9. Steam Workshop设置
 ```xml
