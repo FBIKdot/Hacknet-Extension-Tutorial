@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mission id="exampleMission" activeCheck="true" shouldIgnoreSenderVerification="false">
+    <goals>
+        <goal type="getadmin" target="targetComputer"/>
+        <goal type="filedeletion" target="targetComputer" file="secret.txt" path="home"/>
+        <goal type="fileupload" target="targetComputer" file="evidence.txt" path="home" 
+               destTarget="playerComp" destPath="home"/>
+    </goals>
+    
+    <missionStart val="0">changeSong</missionStart>
+    <missionEnd val="1">addRank</missionEnd>
+    
+    <nextMission IsSilent="false">NONE</nextMission>
+    
+    <posting title="数据清除任务" reqs="" requiredRank="2">
+        需要入侵目标计算机并删除敏感文件
+    </posting>
+    
+    <email>
+        <sender>CSEC</sender>
+        <subject>紧急任务：数据清除</subject>
+        <body>我们需要你入侵目标系统并删除指定的敏感文件。完成后请上传证据文件。</body>
+        <attachments>
+            <link comp="targetComputer"/>
+            <account comp="targetComputer" user="guest" pass="password123"/>
+        </attachments>
+    </email>
+</mission>
