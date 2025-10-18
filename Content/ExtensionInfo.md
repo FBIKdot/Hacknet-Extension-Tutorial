@@ -48,7 +48,7 @@ ExtensionInfo.xml是Hacknet扩展的核心配置文件，定义了扩展的基�
 - 在Hacknet中显示的扩展描述
 - 支持多行文本
 
-### 5. 阵营设置
+### 5. Faction设置
 ```xml
 <Faction>Factions/ExampleFaction.xml</Faction>
 <Faction>Factions/IntroFaction.xml</Faction>
