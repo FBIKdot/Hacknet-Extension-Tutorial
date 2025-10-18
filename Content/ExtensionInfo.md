@@ -26,7 +26,7 @@ ExtensionInfo.xml是Hacknet扩展的核心配置文件，定义了扩展的基�
 <Name>IntroExtension</Name>
 <AllowSaves>true</AllowSaves>
 ```
-- **Name**: 扩展名称（最大128字符）
+- **Name**: 扩展名称（最大128字符，注意：不能是中文）
 - **AllowSaves**: 是否允许保存游戏进度
 
 ### 3. 启动设置
