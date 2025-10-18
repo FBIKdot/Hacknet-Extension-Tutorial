@@ -8,7 +8,7 @@
     <AllowSaves>true</AllowSaves>
   
     <!-- 启动设置：定义游戏开始时加载的资源 -->
-    <StartingVisibleNodes>homePC,ispComputer,advExamplePC</StartingVisibleNodes>
+    
     <StartingMission>Missions/Introduction/MainStart.xml</StartingMission>
     <StartingActions>Actions/OnGameStart.xml</StartingActions>
   
