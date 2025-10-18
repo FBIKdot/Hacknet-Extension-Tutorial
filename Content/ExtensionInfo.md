@@ -1,4 +1,4 @@
-# Hacknet ExtensionInfo.xml 使用文档
+# 新增 Hacknet ExtensionInfo.xml 使用文档
 
 ## 概述
 
