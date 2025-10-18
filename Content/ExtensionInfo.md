@@ -112,7 +112,7 @@ ExtensionInfo.xml是Hacknet扩展的核心配置文件，定义了扩展的基�
 ```xml
 <HacknetExtension>
   <Language>zh-cn</Language>
-  <Name>我的扩展</Name>
+  <Name>myext</Name>
   <AllowSaves>true</AllowSaves>
   <StartingMission>Missions/MyMission.xml</StartingMission>
   <Description>这是我的第一个Hacknet扩展</Description>
