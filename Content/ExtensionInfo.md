@@ -26,7 +26,7 @@ ExtensionInfo.xml是Hacknet扩展的核心配置文件，定义了扩展的基�
 <Name>IntroExtension</Name>
 <AllowSaves>true</AllowSaves>
 ```
-- **Name**: 扩展名称（最大128字符）
+- **Name**: 扩展名称（最大128字符，注意：不能是中文）
 - **AllowSaves**: 是否允许保存游戏进度
 
 ### 3. 启动设置
@@ -48,13 +48,13 @@ ExtensionInfo.xml是Hacknet扩展的核心配置文件，定义了扩展的基�
 - 在Hacknet中显示的扩展描述
 - 支持多行文本
 
-### 5. 派系设置
+### 5. Faction设置
 ```xml
 <Faction>Factions/ExampleFaction.xml</Faction>
 <Faction>Factions/IntroFaction.xml</Faction>
 ```
-- 定义扩展中涉及的派系
-- 可以定义任意数量的派系
+- 定义扩展中涉及的阵营
+- 可以定义任意数量的阵营
 
 ### 6. 教程和启动设置
 ```xml
@@ -112,7 +112,7 @@ ExtensionInfo.xml是Hacknet扩展的核心配置文件，定义了扩展的基�
 ```xml
 <HacknetExtension>
   <Language>zh-cn</Language>
-  <Name>我的扩展</Name>
+  <Name>myext</Name>
   <AllowSaves>true</AllowSaves>
   <StartingMission>Missions/MyMission.xml</StartingMission>
   <Description>这是我的第一个Hacknet扩展</Description>
