@@ -4,7 +4,7 @@
     <Language>zh-cn</Language>
   
     <!-- 基本信息：扩展名称已修改为"示例扩展" -->
-    <Name>示例扩展</Name>
+    <Name>myext</Name>
     <AllowSaves>true</AllowSaves>
   
     <!-- 启动设置：定义游戏开始时加载的资源 -->
