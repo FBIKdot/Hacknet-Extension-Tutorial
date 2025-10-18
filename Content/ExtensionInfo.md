@@ -81,7 +81,7 @@ ExtensionInfo.xml是Hacknet扩展的核心配置文件，定义了扩展的基�
 ```
 - **SequencerTargetID**: 序列器目标计算机ID
 - **SequencerSpinUpTime**: 序列器启动时间（秒）
-- **SequencerFlagRequiredForStart**: 启动序列器所需的Faction（派系，如：CSEC）等级
+- **SequencerFlagRequiredForStart**: 启动序列器所需的Faction（派系，如：CSEC）Flag（一种标签，可在mission中添加）
 - **ActionsToRunOnSequencerStart**: 序列器启动时运行的Action（动作）文件
 
 ### 9. Steam Workshop设置
