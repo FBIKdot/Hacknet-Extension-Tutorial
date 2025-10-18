@@ -67,7 +67,7 @@ addRankFaction:FACTION_ID
 ~~~
 addFlags:flagname,...
 ~~~
-添加Flag(s)（Flag说明：flag指的是标签，通常用于序列器，见[ExtensionInfo](./ExtensionInfo.md)）:
+添加Flag(s):
 - `flagname`: Flag的名字, 多个Flags通过英文逗号隔开.
 
 ~~~
