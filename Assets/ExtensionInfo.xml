@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HacknetExtension>
+    <!-- 语言设置：定义扩展使用的语言 -->
+    <Language>zh-cn</Language>
+  
+    <!-- 基本信息：扩展名称已修改为"示例扩展" -->
+    <Name>示例扩展</Name>
+    <AllowSaves>true</AllowSaves>
+  
+    <!-- 启动设置：定义游戏开始时加载的资源 -->
+    <StartingVisibleNodes>homePC,ispComputer,advExamplePC</StartingVisibleNodes>
+    <StartingMission>Missions/Introduction/MainStart.xml</StartingMission>
+    <StartingActions>Actions/OnGameStart.xml</StartingActions>
+  
+    <!-- 描述信息：在Hacknet中显示的扩展介绍（支持多行） -->
+    <Description>—— 完整功能示例扩展 ——
+这是一个展示了 ExtensionInfo.xml 文件所有主要配置项的示例扩展。
+通过此示例，您可以了解如何配置启动任务、派系、主题、音乐以及Steam Workshop集成。
+描述文本支持多行输入，方便您详细说明扩展的内容和特色。</Description>
+  
+    <!-- 派系设置：可以定义多个派系文件 -->
+    <Faction>Factions/CSEC.xml</Faction>
+    <Faction>Factions/Entropy.xml</Faction>
+    <Faction>Factions/NeutralFaction.xml</Faction>
+  
+    <!-- 教程和启动设置：控制游戏初始流程 -->
+    <StartsWithTutorial>false</StartsWithTutorial>
+    <HasIntroStartup>true</HasIntroStartup>
+  
+    <!-- 主题和音乐：设置游戏界面风格和背景音乐 -->
+    <StartingTheme>Themes/CustomTheme.xml</StartingTheme>
+    <IntroStartupSong>Music/custom_startup.ogg</IntroStartupSong>
+  
+    <!-- 扩展序列器设置：主线末尾Sequencer.exe的相关配置 -->
+    <SequencerTargetID>finalTargetComputer</SequencerTargetID>
+    <SequencerSpinUpTime>12.0</SequencerSpinUpTime>
+    <SequencerFlagRequiredForStart>csec_missionComplete</SequencerFlagRequiredForStart>
+    <ActionsToRunOnSequencerStart>Actions/SequencerStartActions.xml</ActionsToRunOnSequencerStart>
+  
+    <!-- Steam Workshop设置：扩展发布到创意工坊的元数据 -->
+    <WorkshopDescription>
+        这是一个完整的Hacknet扩展示例，展示了ExtensionInfo.xml文件的所有主要配置项。
+        功能包括：
+        - 多派系任务线
+        - 自定义主题和音乐
+        - 复杂的序列器终局内容
+        适合希望深入学习Hacknet扩展开发的玩家参考。
+        （描述最多支持8000字符）
+    </WorkshopDescription>
+    <WorkshopLanguage>Chinese</WorkshopLanguage>
+    <WorkshopVisibility>0</WorkshopVisibility>
+    <WorkshopTags>Extension, Tutorial, Example, Full</WorkshopTags>
+    <WorkshopPreviewImagePath>PreviewImage.png</WorkshopPreviewImagePath>
+    <WorkshopPublishID>NONE</WorkshopPublishID>
+</HacknetExtension>
