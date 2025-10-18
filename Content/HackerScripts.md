@@ -61,7 +61,7 @@ config TARGET_COMP2 SOURCE_COMP1 0 $#%#$
 | `showRam` | 显示目标电脑的RAM区域 | 无 | |
 | `showDisplay` | 显示目标电脑的显示Display区域 | 无 | |
 | `showTerminal` | 显示目标电脑的终端 | 无 | |
-| `trackseq` | 为目标电脑加flag | 无 | 如果有CSEC flag并且没有防御成功forkbomb，则进入紧急恢复模式(不会启动forkbomb) |
+| `trackseq` | 改变玩家被forkbomb成功的结果 | 无 | 如果有CSEC flag并且没有防御成功forkbomb，则进入紧急恢复模式(不会蓝屏) |
 | `instanttrace` | 立即使目标电脑进入紧急恢复模式 | 无 | |
 | `forkbomb` | 为目标电脑执行forkbomb | 无 | |
 | `flash` | 让目标电脑的UI闪烁一下 | 无 | |
