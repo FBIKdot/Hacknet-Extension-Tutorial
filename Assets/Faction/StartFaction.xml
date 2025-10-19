@@ -1,0 +1,11 @@
+<CustomFaction name="示例阵营" id="ExampleFaction" playerVal="0">
+  <Action ValueRequired="1">
+    <sendEmail subject="欢迎加入阵营" sender="系统管理员">
+      恭喜！您的阵营等级已达到1级。
+    </sendEmail>
+  </Action>
+  
+  <Action ValueRequired="5">
+    <AddDegree owner="玩家姓名" degree="网络安全学士" uni="虚拟科技大学" gpa="3.8"/>
+  </Action>
+</CustomFaction>
