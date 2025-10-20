@@ -99,32 +99,10 @@ Hacknet 主题使用 RGBA 颜色格式：
 - **RGB**: `红,绿,蓝` (每个值 0-255)
 - **RGBA**: `红,绿,蓝,透明度` (透明度 0-255，0=完全透明，255=完全不透明)
 
-## Chronomia 主题分析
 
-### 主题特色
-
-基于 Chronomia.xml 主题文件，它具有以下特点：
-
-- **主色调**: 蓝色系 (30,111,233)
-- **背景图片**: Themes/Backgrounds/Chronomia_jacket.png
-- **终端文本**: 浅蓝色 (213,245,255)
-- **模块边框**: 深蓝色 (53,59,238)
-- **管理员提示**: 紫色 (4,0,255)
-
-### 关键颜色配置
-
-```xml
-<!-- 管理员身份提示色 -->
-<defaultHighlightColor>4,0,255</defaultHighlightColor>
-<!-- 顶部系统栏 -->
-<defaultTopBarColor>30,111,233</defaultTopBarColor>
-<!-- 模块描边 -->
-<moduleColorSolidDefault>53,59,238</moduleColorSolidDefault>
-<!-- 终端文本颜色 -->
-<terminalTextColor>213,245,255</terminalTextColor>
-```
 
 ## 使用示例
+标准的Theme文件见[Chronomia.xml](./Assets/Themes/Chronomia.xml)
 
 ### 创建新主题
 
