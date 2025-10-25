@@ -345,7 +345,29 @@ Different users too
 `sender` : 发送者  
 `subject` : 标题  
 标签值为邮件内容
-
+### IRCDaemon
+```xml
+<IRCDaemon name="IRC Chat" themeColor="215,218,51"      needsLogin="false">
+        <user name="Bit" color="239,30,30" />
+        <user name="Channel" color="31,0,232" />
+        <post user="Bit">I am DEAD</post>
+</IRCDaemon>
+```
+类似kaguya的DHS服务器，但是没有任务系统
+`name` : IRC的名字
+`themeColor` : IRC的主题颜色
+`needsLogin` : 访问IRC是否需要登录？
+#### user
+```xml
+<user name="Bit" color="239,30,30" />
+```
+主要用于给特定的用户名定义颜色
+#### post
+```xml
+<post user="Bit">I am DEAD</post>
+```
+给IRC服务器添加一条聊天记录
+`user` : 用户名
 ### uploadServerDaemon
 ```xml
 <uploadServerDaemon name="Upload Dropbox" folder="Drop" 
