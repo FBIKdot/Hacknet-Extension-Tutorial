@@ -34,3 +34,8 @@
 - *《Hacknet 扩展制作指南 – 入门》* by Pitiedwzr & Err0r233
 
 - *《Hacknet 主机编辑指南》* by Cyl18
+
+# 贡献者
+[![](https://contrib.rocks/image?repo=FBIKdot/Hacknet-Extension-Tutorial)](https://github.com/FBIKdot/Hacknet-Extension-Tutorial/graphs/contributors)
+
+*Made with [contrib.rocks](https://contrib.rocks)*
