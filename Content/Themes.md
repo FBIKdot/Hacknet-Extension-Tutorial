@@ -119,4 +119,3 @@
 ## 示例文件
 可参考[Chronomia.xml](./../Assets/Themes/Chronomia.xml)
 
-注：背景图片来源于phigrosWiki https://static.wikia.nocookie.net/phigros/images/8/88/Chronomia_jacket.png

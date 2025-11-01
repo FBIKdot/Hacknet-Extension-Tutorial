@@ -5,7 +5,7 @@
 
   <!-- This is a path to the background image file. It should be 1920x1080, and a .jpg or .png file.
   If this is left out, the theme will automatically generate a dynamic background for the theme-->
-  <backgroundImagePath>Themes/Backgrounds/Chronomia_jacket.png</backgroundImagePath>
+  <backgroundImagePath>Themes/Backgrounds/RiptideGreen.png</backgroundImagePath>
   
   <!-- Main Colors - these will define the main feel of the theme -->
   <!-- Color of nodes on the netmap, and many other derived colors. -->
