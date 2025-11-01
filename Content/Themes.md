@@ -116,3 +116,7 @@
 - topBarIconsColor 顶部栏icon颜色
 - thisComputerNode 本地计算机节点颜色
 - scanlinesColor 搜索线的颜色
+## 示例文件
+可参考[Chronomia.xml](./../Assets/Themes/Chronomia.xml)
+
+注：背景图片来源于phigrosWiki https://static.wikia.nocookie.net/phigros/images/8/88/Chronomia_jacket.png
