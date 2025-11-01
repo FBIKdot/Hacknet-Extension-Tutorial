@@ -101,4 +101,18 @@
 - indentBackgroundColor 顶部内存条显示占用（USED ：RAM ??/??）的背景颜色
 - outlineColor 节点之间的连接线颜色
 - lockedColor 端口锁定状态的背景颜色（也是断开/取消的背景色）
-- 
+- brightLockedColor 显示端口不可破解的背景色
+- brightUnlockedColor ssh的小方格过渡颜色
+- unlockedColor 端口开放背景色
+- lightGray MessageBoard主题颜色
+- shellColor 允许shell时节点的颜色
+- shellButtonColor shell过载按钮左边框颜色
+- semiTransText 模块bar文字色
+- terminalTextColor 终端文本颜色
+- topBarTextColor 顶部系统栏颜色
+- superLightWhite 斜条纹颜色
+- connectedNodeHighlight 当前连接的节点颜色
+- netmapToolTipColor 把鼠标放在节点上显示的节点名颜色
+- topBarIconsColor 顶部栏icon颜色
+- thisComputerNode 本地计算机节点颜色
+- scanlinesColor 搜索线的颜色
