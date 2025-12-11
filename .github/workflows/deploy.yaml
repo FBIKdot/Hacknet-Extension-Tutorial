@@ -27,6 +27,7 @@ jobs:
       - name: Setup pgit
         run : |
           curl -LO https://github.com/FBIKdot/pgit/releases/download/1.2.0-rc1/pgit
+          chmod +x ./pgit
 
       - name: Generate documentation
         run: |
