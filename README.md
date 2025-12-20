@@ -1,13 +1,9 @@
 # Hacknet-Extension-Tutorial
 
-> [!WARNING]\
-> 内容不一定完整准确，建议您结合 [参考内容](#参考内容) 阅读。
+> [!WARNING]
+> 该项目未来将会被 [Hacknet.wiki](https://hacknet.wiki) 所取代。
 >
-> 该项目在未来会被以下项目取代：
-> 
-> - Hacknet Extension 标准：[hnxml](https://hnxml.js.org)（开发中）
-> 
-> - 教程重制：敬请期待。
+> 内容不一定完整准确，建议您结合 [参考内容](#参考内容) 阅读。
 
 这是一个从零开始的 Hacknet扩展 制作教程. 
 
