@@ -140,7 +140,7 @@ Node的security指定Node的安全等级
 <portsForCrack val="0" />
 ```
 定义Node破解所需端口数  
-`val` : 破解所需的端口数,设置为101以上会启用EnSec(那个红条,无法porthack的)
+`val` : 破解所需的端口数,设置为 `101` 及以上会启用 INVIOLABILITY ERROR，`102` 及以上会启用 INVIOLABILITY DETECTED。 
 
 ### firewall
 ```xml
