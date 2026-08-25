@@ -1,3 +1,5 @@
+
+
 # Hacknet-Extension-Tutorial
 
 > [!WARNING]
@@ -11,9 +13,7 @@
 
 我们将在文档的修改后进行`Releases`, 如果你对这个项目有兴趣, 可以对该仓库开启`Watch`, 在`Custom`-勾选`Releases`或者勾选`All Activity`来开启`Releases`提醒.
 
-如果你觉得这个文档有意义, 可以`Stars`一下.
-
-
+如果你觉得这个文档有意义, 可以`Stars`一下. 如需贡献, 请阅读 [贡献指南](./CONTRIBUTING.md).
 
 
 
